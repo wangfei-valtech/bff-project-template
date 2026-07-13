@@ -55,6 +55,7 @@ dist
 .DS_Store
 *.pem
 .node_repl_history
+docs/superpowers/
 
 # local env
 .env*.local

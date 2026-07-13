@@ -28,6 +28,16 @@ node -v
 pnpm -v
 ```
 
+## 为什么锁定 Next.js 15
+
+本工程有意将 `next` 和 `eslint-config-next` 锁定在 `15.5.20`，不是因为 App Router 对 Next.js 16 不兼容，而是因为工程需要支持通过 AWS Amplify Hosting 部署 SSR、Route Handler 等 Node.js 服务端能力。AWS Amplify Hosting Compute 当前官方支持范围是 Next.js 12 至 15，尚未将 Next.js 16 列入支持矩阵。
+
+`amplify.yml` 只负责描述安装依赖、执行构建和收集产物等构建流程，不能绕过 Amplify Hosting Compute 的运行时兼容范围。因此，不要通过 Dependabot、Renovate、`pnpm update` 或手工修改等方式单独将 `next` 升级到 16。
+
+当且仅当 AWS 官方文档明确宣布 Amplify Hosting Compute 支持 Next.js 16 后，才可以考虑升级。升级时必须同步调整 `next` 和 `eslint-config-next`，检查 CLI、ESLint、TypeScript 与构建配置差异，并完整执行测试、Lint、类型检查、格式检查、生产构建和 Amplify 部署验证。
+
+AWS 官方支持范围见 [Amplify support for Next.js](https://docs.aws.amazon.com/amplify/latest/userguide/ssr-amplify-support.html)。
+
 ## 安装依赖
 
 ```bash

@@ -8,6 +8,8 @@
 ## 技术栈
 
 - 框架：Next.js
+- 框架版本：`next` 和 `eslint-config-next` 必须保持在 `15.5.20`，以匹配 AWS Amplify Hosting Compute 当前仅支持 Next.js 12 至 15 的官方范围；`amplify.yml` 不能绕过该运行时限制。
+- 升级约束：当且仅当 AWS 官方支持矩阵明确包含 Next.js 16 后，才允许评估升级；升级前必须同步检查框架与 ESLint 配置版本，并完成全量验证和 Amplify 实际部署验证。
 - 语言：TypeScript
 - 包管理：pnpm
 - 路由：App Router

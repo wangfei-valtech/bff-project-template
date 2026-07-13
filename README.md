@@ -4,7 +4,7 @@ Backend for Frontend 场景下的前端工程，基于 Next.js、TypeScript、Ta
 
 ## 技术栈
 
-- 服务框架：Next.js App Router
+- 服务框架：Next.js 15.5.20 App Router
 - 开发语言：TypeScript
 - 包管理：pnpm
 - 样式方案：TailwindCSS
@@ -71,6 +71,8 @@ pnpm build
 pnpm start
 ```
 
+项目使用 Next.js 15.5.20。该版本的开发和生产构建默认使用 webpack，因此脚本无需额外传入 `--webpack`。
+
 ## 常用命令
 
 ```bash
@@ -103,16 +105,24 @@ pnpm build         # 生产构建
 ```bash
 NEXT_PUBLIC_APP_NAME=bff-project-template
 NEXT_PUBLIC_API_BASE_URL=
-NEXT_PUBLIC_CDN_ORIGIN=https://cdn.example.com
+NEXT_PUBLIC_CDN_ORIGIN=
 ```
 
 说明：
 
 - `NEXT_PUBLIC_APP_NAME`：应用名称。
 - `NEXT_PUBLIC_API_BASE_URL`：接口基础路径，默认留空；示例代码显式请求 `/api/*`。
-- `NEXT_PUBLIC_CDN_ORIGIN`：生产环境 CDN 域名前缀。
+- `NEXT_PUBLIC_CDN_ORIGIN`：生产环境 CDN 域名前缀，默认留空，存在真实 CDN 时由 CI/CD 在构建阶段注入。
 
 当 `NODE_ENV=production` 且配置了 `NEXT_PUBLIC_CDN_ORIGIN` 时，Next.js 的 `/_next/static` 静态资源会通过 `assetPrefix` 自动拼接 CDN 前缀。
+
+例如，在部署流水线中执行：
+
+```bash
+NEXT_PUBLIC_CDN_ORIGIN=https://static.your-domain.com pnpm build
+```
+
+该变量以 `NEXT_PUBLIC_` 开头，会在构建时写入客户端产物，因此必须在 `pnpm build` 之前设置。
 
 如果使用 `public` 目录下的静态资源，请通过 `src/lib/assets.ts` 中的 `assetUrl()` 获取路径，确保生产环境也能拼接 CDN 前缀。
 

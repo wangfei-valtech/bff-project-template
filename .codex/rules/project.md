@@ -53,7 +53,7 @@ pnpm format:check
 
 ## 运行与环境说明
 
-- 项目使用 Next.js App Router，并在开发和生产构建中显式使用 webpack。
+- 项目使用 Next.js 15 App Router；开发和生产构建不启用 Turbopack，沿用 Next.js 15 默认的 webpack。
 - 功能示例页位于 `/demo`，首页 `/` 是简洁欢迎页。
 - 语言和主题状态通过 app providers 与 localStorage 进行共享。
 - 生产环境下的静态资源继续沿用 `src/lib/assets.ts` 和 `next.config.ts` 中的 CDN 感知方案。

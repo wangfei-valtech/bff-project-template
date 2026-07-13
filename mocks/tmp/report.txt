@@ -1,0 +1,16 @@
+# Mock Literature Review
+
+## Summary
+
+Recent work in protein-ligand binding prediction increasingly combines
+structure-based modeling, graph neural networks, and large pretrained models.
+
+## Findings
+
+1. Structure-aware models improve geometric reasoning.
+2. Learned representations reduce dependence on hand-crafted descriptors.
+3. Evaluation quality depends heavily on dataset construction and leakage control.
+
+## Limitations
+
+This is a mock report generated only for the interview exercise.

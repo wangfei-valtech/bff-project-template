@@ -11,7 +11,7 @@ const router = new Router();
 
 /*
 // @ts-expect-error mihawk 运行时会提供 router 的完整类型能力，这里只做本地编译兜底。
-router.get('/api/demo', async (ctx: KoaContext) => {
+router.get('/v1/demo', async (ctx: KoaContext) => {
   ctx.status = 200;
   ctx.type = 'application/json';
   ctx.body = {

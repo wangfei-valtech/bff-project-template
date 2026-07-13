@@ -33,13 +33,13 @@ const nextConfig: NextConfig = {
   },
   // 生产环境 CDN 配置
   assetPrefix: isProduction && cdnOrigin ? cdnOrigin : undefined,
-  // 本地开发接口代理
+  // 本地开发版本化接口代理
   async rewrites() {
     if (!isProduction) {
       return [
         {
-          destination: "http://127.0.0.1:9999/api/:path*",
-          source: "/api/:path*",
+          destination: "http://127.0.0.1:9999/v:version/:path*",
+          source: "/v:version(\\d+)/:path*",
         },
       ];
     }

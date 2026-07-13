@@ -52,7 +52,7 @@
     "title": "Language"
   },
   "request": {
-    "description": "Run a mocked request through the shared request utility.",
+    "description": "Click the button to inspect the language and theme fields in the shared request utility's headers.",
     "loading": "Loading...",
     "run": "Run request demo",
     "title": "Request utility"

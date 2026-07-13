@@ -33,6 +33,7 @@ const themeOptions = [
   { icon: Sun, labelKey: "theme.light", value: "light" },
   { icon: Moon, labelKey: "theme.dark", value: "dark" },
 ] as const;
+const requestDemoPath = "/napi/request-demo";
 
 /** 展示 BFF 前端模板集成的各项基础能力。 */
 export default function DemoPage() {
@@ -51,9 +52,11 @@ export default function DemoPage() {
 
   const demoRequest = useMutation({
     mutationFn: () =>
-      request<{ ok: boolean; requestedAt: string; headers: { lang: string; theme: string } }>(
-        "/api/demo",
-      ),
+      request<{
+        ok: boolean;
+        requestedAt: string;
+        headers: { "accept-language": string; theme: string };
+      }>(requestDemoPath),
   });
 
   const startGuide = useMemoizedFn(() => {
@@ -263,6 +266,14 @@ export default function DemoPage() {
             <div className="space-y-1">
               <h2 className="text-base font-semibold">{t("request.title")}</h2>
               <p className="text-sm leading-6 text-muted-foreground">{t("request.description")}</p>
+            </div>
+            <div className="mt-4 flex min-w-0 items-center gap-2 rounded-md border bg-muted/50 px-3 py-2">
+              <span className="shrink-0 rounded bg-foreground px-1.5 py-0.5 font-mono text-[10px] font-semibold tracking-wide text-background">
+                GET
+              </span>
+              <code className="min-w-0 overflow-x-auto whitespace-nowrap font-mono text-xs text-muted-foreground">
+                {requestDemoPath}
+              </code>
             </div>
             <Button
               className="mt-5 w-full"

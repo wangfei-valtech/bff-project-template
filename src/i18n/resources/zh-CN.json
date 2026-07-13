@@ -52,7 +52,7 @@
     "title": "多语言"
   },
   "request": {
-    "description": "点击按钮查看统一请求工具返回的模拟数据。",
+    "description": "点击按钮查看统一请求工具中 headers 中的语言和主题字段。",
     "loading": "请求中...",
     "run": "运行请求示例",
     "title": "请求封装"

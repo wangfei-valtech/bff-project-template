@@ -1,0 +1,74 @@
+{
+  "actions": {
+    "startGuide": "开始引导",
+    "copyScreenshot": "一键截图到剪贴板",
+    "copyScreenshotDone": "截图已复制",
+    "copyScreenshotError": "截图失败，请在支持剪贴板写入的环境重试"
+  },
+  "app": {
+    "description": "这个页面演示了 i18n、主题、请求头注入、React Query、Jotai、driver.js、ahooks 和 es-toolkit 的基础集成。",
+    "kicker": "Next.js SPA Template",
+    "title": "BFF 前端工程模板"
+  },
+  "common": {
+    "close": "关闭"
+  },
+  "home": {
+    "cta": "查看 Demo",
+    "description": "这是一个用于 BFF 项目的前端工程模板，已经预置常用工程能力和一个可运行的功能示例页面。",
+    "highlights": {
+      "engineering": {
+        "description": "Next.js、TypeScript、TailwindCSS、pnpm、ESLint、Prettier 和提交校验已完成集成。",
+        "title": "工程化基础"
+      },
+      "i18n": {
+        "description": "Demo 页面内置中文和英文切换，并演示请求头 lang 注入规则。",
+        "title": "国际化示例"
+      },
+      "theme": {
+        "description": "默认跟随系统主题，也支持主动切换浅色和深色模式。",
+        "title": "主题切换"
+      }
+    },
+    "kicker": "BFF Frontend Template",
+    "title": "欢迎使用 bff-project-template"
+  },
+  "guide": {
+    "languageDescription": "切换后会持久化语言，并在非默认语言请求中写入 headers.lang。",
+    "languageTitle": "多语言切换",
+    "nextButton": "下一步",
+    "prevButton": "上一步",
+    "doneButton": "完成",
+    "requestDescription": "统一请求工具会读取当前语言和主题，并自动注入请求头。",
+    "requestTitle": "请求示例",
+    "screenshotDescription": "新增“截图到剪贴板”按钮后，将当前 Demo 页面截取为图片并复制到系统剪贴板。",
+    "screenshotTitle": "页面截图",
+    "themeDescription": "默认跟随系统，也可以主动选择浅色或深色主题。",
+    "themeTitle": "主题切换"
+  },
+  "language": {
+    "current": "当前语言",
+    "description": "默认中文，切换到英文后请求会携带 lang。",
+    "title": "多语言"
+  },
+  "request": {
+    "description": "点击按钮查看统一请求工具返回的模拟数据。",
+    "loading": "请求中...",
+    "run": "运行请求示例",
+    "title": "请求封装"
+  },
+  "theme": {
+    "active": "当前解析主题：{{theme}}",
+    "dark": "深色",
+    "light": "浅色",
+    "pending": "主题加载中",
+    "system": "跟随系统",
+    "title": "主题"
+  },
+  "versionUpdate": {
+    "description": "刷新页面即可使用最新内容。",
+    "refresh": "刷新",
+    "refreshAlt": "刷新页面以更新到最新版本",
+    "title": "发现新版本"
+  }
+}

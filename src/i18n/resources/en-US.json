@@ -1,0 +1,74 @@
+{
+  "actions": {
+    "startGuide": "Start guide",
+    "copyScreenshot": "Screenshot to clipboard",
+    "copyScreenshotDone": "Screenshot copied",
+    "copyScreenshotError": "Screenshot failed. Please retry in a browser that supports clipboard write"
+  },
+  "app": {
+    "description": "This page demonstrates the baseline integration for i18n, theme switching, request headers, React Query, Jotai, driver.js, ahooks, and es-toolkit.",
+    "kicker": "Next.js SPA Template",
+    "title": "BFF Frontend Template"
+  },
+  "common": {
+    "close": "Close"
+  },
+  "home": {
+    "cta": "View demo",
+    "description": "This frontend template for BFF projects comes with common engineering defaults and a runnable feature demo.",
+    "highlights": {
+      "engineering": {
+        "description": "Next.js, TypeScript, TailwindCSS, pnpm, ESLint, Prettier, and commit checks are wired in.",
+        "title": "Engineering baseline"
+      },
+      "i18n": {
+        "description": "The demo page includes Chinese and English switching, plus the lang request header rule.",
+        "title": "Internationalization"
+      },
+      "theme": {
+        "description": "The theme follows the system preference by default and supports explicit light and dark modes.",
+        "title": "Theme switching"
+      }
+    },
+    "kicker": "BFF Frontend Template",
+    "title": "Welcome to bff-project-template"
+  },
+  "guide": {
+    "languageDescription": "Language changes are persisted, and non-default language requests include headers.lang.",
+    "languageTitle": "Language switch",
+    "nextButton": "Next",
+    "prevButton": "Previous",
+    "doneButton": "Done",
+    "requestDescription": "The request utility reads the active language and theme, then injects headers automatically.",
+    "requestTitle": "Request demo",
+    "screenshotDescription": "Use the screenshot button to capture the current Demo page and copy the image to your system clipboard.",
+    "screenshotTitle": "Page screenshot",
+    "themeDescription": "The initial theme follows the system preference, with explicit light and dark choices.",
+    "themeTitle": "Theme switch"
+  },
+  "language": {
+    "current": "Current language",
+    "description": "Chinese is the default. English requests include lang.",
+    "title": "Language"
+  },
+  "request": {
+    "description": "Run a mocked request through the shared request utility.",
+    "loading": "Loading...",
+    "run": "Run request demo",
+    "title": "Request utility"
+  },
+  "theme": {
+    "active": "Resolved theme: {{theme}}",
+    "dark": "Dark",
+    "light": "Light",
+    "pending": "Loading theme",
+    "system": "System",
+    "title": "Theme"
+  },
+  "versionUpdate": {
+    "description": "Refresh to load the latest content.",
+    "refresh": "Refresh",
+    "refreshAlt": "Refresh the page to update to the latest version",
+    "title": "New version available"
+  }
+}

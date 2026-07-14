@@ -38,7 +38,7 @@ function buildHeaders(headers?: HeadersInit) {
   return nextHeaders;
 }
 
-/** 发送接口请求，其中 `/napi` 请求固定使用当前站点的同源地址。 */
+/** 发送接口请求，其中 `/napi` 请求使用当前站点的同源地址，完整 HTTP(S) 地址保留原域名。 */
 export async function request<TResponse, TMock = TResponse>(
   input: string,
   options: RequestOptions<TMock> = {},
@@ -50,7 +50,8 @@ export async function request<TResponse, TMock = TResponse>(
   }
 
   const isNapiRequest = input === "/napi" || input.startsWith("/napi/");
-  const requestUrl = isNapiRequest ? input : `${baseUrl}${input}`;
+  const isAbsoluteRequest = input.startsWith("http://") || input.startsWith("https://");
+  const requestUrl = isNapiRequest || isAbsoluteRequest ? input : `${baseUrl}${input}`;
   const response = await fetch(requestUrl, {
     ...init,
     headers: buildHeaders(headers),

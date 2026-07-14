@@ -57,6 +57,25 @@ describe("request", () => {
     expect(fetchMock).toHaveBeenCalledWith("/napi/request-demo", expect.any(Object));
   });
 
+  it("keeps absolute HTTP(S) request URLs instead of applying the API base URL", async () => {
+    vi.stubEnv("NEXT_PUBLIC_API_BASE_URL", "https://api.example.com");
+    fetchMock.mockImplementation(() => Promise.resolve(Response.json({ ok: true })));
+
+    await request("http://third-party.example.com/v1/data");
+    await request("https://third-party.example.com/v1/data");
+
+    expect(fetchMock).toHaveBeenNthCalledWith(
+      1,
+      "http://third-party.example.com/v1/data",
+      expect.any(Object),
+    );
+    expect(fetchMock).toHaveBeenNthCalledWith(
+      2,
+      "https://third-party.example.com/v1/data",
+      expect.any(Object),
+    );
+  });
+
   it("omits the default language header and sends the resolved light theme", async () => {
     fetchMock.mockResolvedValue(Response.json({ ok: true }));
 
